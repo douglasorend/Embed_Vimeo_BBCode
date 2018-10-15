@@ -96,6 +96,8 @@ function BBCode_Vimeo_Settings(&$config_vars)
 
 function BBCode_Vimeo_Embed(&$message, &$smileys, &$cache_id, &$parse_tags)
 {
+	if ($message === false)
+		return;
 	$replace = (strpos($cache_id, 'sig') !== false ? '[url]$0[/url]' : '[vimeo]$0[/vimeo]');
 	$pattern = '~(?<=[\s>\.(;\'"]|^)(http|https)://(|(.+?).)vimeo.com/((recording|song)/([\w\d\-\_\%])+/(\d+)_(\d+))\??[/\w\-_\~%@\?;=#}\\\\]?~';
 	$message = preg_replace($pattern, $replace, $message);
