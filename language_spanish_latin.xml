@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:Vimeo</id>
+<name>Embed Vimeo Videos BBCode</name>
+<version>1.1</version>
+	
+<file name="$languagedir/index.spanish_latin.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['Vimeo_no_post_id'] = 'No se proporcion&oacute; un enlace de publicaci&oacute;n de Vimeo.';
+$txt['Vimeo_default_width'] = 'Ancho predeterminado utilizado para Vimeo bbcode cuando no se especifica<div class="smalltext">NOTA: Colocar <strong>0</strong> para usar la pantalla adaptativa</div>';
+]]></add>
+	</operation>
+</file>
+
+<file name="$languagedir/index.spanish_latin-utf8.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['Vimeo_no_post_id'] = 'No se proporcionó un enlace de publicación de Vimeo.';
+$txt['Vimeo_default_width'] = 'Ancho predeterminado utilizado para Vimeo bbcode cuando no se especifica<div class="smalltext">NOTA: Colocar <strong>0</strong> para usar la pantalla adaptativa</div>';
+]]></add>
+	</operation>
+</file>
+</modification>
