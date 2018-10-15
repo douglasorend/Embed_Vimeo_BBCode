@@ -1,2 +1,5 @@
+v1.1 - December 8th, 2017
+o Added URL embedding code for the Tapatalk mod.
+
 v1.0 - July 12th, 2017
 o Initial Public Release
