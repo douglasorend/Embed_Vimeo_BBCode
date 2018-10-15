@@ -65,18 +65,18 @@ function BBCode_Vimeo_Validate(&$tag, &$data, &$disabled)
 	global $txt, $modSettings;
 	
 	if (empty($data))
-		return ($tag['content'] = $txt['vimeo_no_post_id']);
+		return ($tag['content'] = $txt['Vimeo_no_post_id']);
 	$data = strtr(trim($data), array('<br />' => ''));
 	if (strpos($data, 'http://') !== 0 && strpos($data, 'https://') !== 0)
 		$data = 'http://' . $data;
 	$pattern = '#(http|https)://(|(.+?).)vimeo.com/(\d+)#i';
 	if (!preg_match($pattern, $data, $parts))
-		return ($tag['content'] = $txt['vimeo_no_post_id']);
+		return ($tag['content'] = $txt['Vimeo_no_post_id']);
 	$data = $parts[4];
 
 	list($width, $frameborder) = explode('|', $tag['content']);
 	if (empty($width))
-		$width = !empty($modSettings['vimeo_default_width']) ? $modSettings['vimeo_default_width'] : false;
+		$width = !empty($modSettings['Vimeo_default_width']) ? $modSettings['Vimeo_default_width'] : false;
 	$tag['content'] = '<div style="max-width: ' . (empty($width) ? '100%;' : $width . 'px;') . '"><div class="vimeo-wrapper">' .
 		'<iframe src="https://player.vimeo.com/video/' . $data .'?title=0&byline=0&portrait=0&badge=0" scrolling="no" frameborder="' . $frameborder . '"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></div>';
 }
@@ -91,7 +91,7 @@ function BBCode_Vimeo_LoadTheme()
 
 function BBCode_Vimeo_Settings(&$config_vars)
 {
-	$config_vars[] = array('int', 'vimeo_default_width');
+	$config_vars[] = array('int', 'Vimeo_default_width');
 }
 
 function BBCode_Vimeo_Embed(&$message, &$smileys, &$cache_id, &$parse_tags)
